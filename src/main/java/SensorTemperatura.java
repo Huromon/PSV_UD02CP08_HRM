@@ -23,7 +23,7 @@ public class SensorTemperatura extends Thread{
 
               System.out.println("[SENSOR] temperatura medida de: " +inv.medirTemperatura() + "ºC.");
               cnt.recibido();
-              Thread.sleep(1000 + k.nextInt(1000));
+              Thread.sleep(2000 + k.nextInt(1000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
