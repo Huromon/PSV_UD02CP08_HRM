@@ -1,15 +1,20 @@
+import java.util.Random;
+
 public class Invernadero {
     private Integer Temperatura;
-    private SensorTemperatura st;
-    private ControladorAmbiental ca;
-    Invernadero(SensorTemperatura st , ControladorAmbiental ca){
-        this.ca=ca;
-        this.st=st;
+    Invernadero(){
         this.Temperatura=25;
     }
 
 
-    public Integer getTemperatura(){
+  synchronized   public Integer medirTemperatura(){
+        Random ran = new Random();
+        Integer nT = ran.nextInt(10)+20;
+        setTemperatura(nT);
+        return Temperatura;
+    }
+
+    synchronized public Integer getTemperatura() {
         return Temperatura;
     }
 
